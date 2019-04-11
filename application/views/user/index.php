@@ -190,9 +190,7 @@
 				});
 			});
 		});
-
-
-
+		
 		//function
 		function showAllUser() {
 			$.ajax({
