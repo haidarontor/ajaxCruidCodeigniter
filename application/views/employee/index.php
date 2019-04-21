@@ -195,10 +195,11 @@
 				async: false,
 				dataType: 'json',
 				success: function(data){
-
+                console.log(data);
 					var html = '';
 					var i;
 					for(i=0; i<data.length; i++){
+						// alert(data[i].id);
 					
 						html +='<tr>'+
 									'<td>'+data[i].id+'</td>'+

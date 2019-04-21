@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 Class User extends CI_Controller{
 	function __construct(){
 		parent:: __construct();
-		$this->load->model('user_m', 'u');
+		$this->load->model('user_m');
 	}
 
 	function index(){
@@ -15,48 +15,16 @@ Class User extends CI_Controller{
 	}
 
 	public function showAllUser(){
-		$result = $this->u-> showAllUser();
+		$result = $this->user_m-> showAllUser();
+		// echo "<pre>";
+		// print_r($result);
+		// return json_encode($result);
 		echo json_encode($result);
+		 
+
 	}
 
-	public function addEmployee()
-	{
-		$result = $this->m->addEmployee();
-		$msg['success'] = false;
-		$msg['type'] = 'add';
-		if ($result) {
-			$msg['success'] = true;
-		}
-		echo json_encode($msg);
-	}
-
-	public function editEmployee()
-	{
-		$result = $this->m->editEmployee();
-		echo json_encode($result);
-	}
-
-	public function updateEmployee()
-	{
-		$result = $this->m->updateEmployee();
-		$msg['success'] = false;
-		$msg['type'] = 'update';
-		if ($result) {
-			$msg['success'] = true;
-		}
-		echo json_encode($msg);
-	}
-
-	public function deleteEmployee()
-	{
-		$result = $this->m->deleteEmployee();
-		$msg['success'] = false;
-		if ($result) {
-			$msg['success'] = true;
-		}
-		echo json_encode($msg);
-	}
-
+ 
 	 
 
 }
